@@ -14,9 +14,9 @@ spec = Gem::Specification.new do |s|
 
   s.add_dependency('rest-client', '~> 1.4')
   s.add_dependency('mime-types', '>= 1.25', '< 3.0')
-  s.add_dependency('json', '~> 1.8.1')
+  s.add_dependency('json', '~> 1.8')
 
-  s.add_development_dependency('rspec')
+  s.add_development_dependency('rspec', '~>3.0')
 
   s.files = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- spec/*`.split("\n")
