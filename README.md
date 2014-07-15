@@ -7,7 +7,7 @@ account today!
 ## Introduction
 
 Every request made to the Coinkite API requires three special header
-lines. This code can generate the timestamp and signature value
+lines. The code in `sign.rb` can generate the timestamp and signature value
 required for 2 of those 3 headers. The remaining header is just
 the API key itself.
 
@@ -16,6 +16,9 @@ Header lines you need:
 	X-CK-Key: K5555a555-55a555aa-a55aa5a5555aaa5a
 	X-CK-Timestamp: 2014-06-23T03:10:04.905376
 	X-CK-Sign: 0aa7755aaa45189a98a5a8a887a564aa55aa5aa4aa7a98aa2858aaa60a5a56aa
+
+Use the Gem for a more complete solution that also checks SSL certificates, 
+handles some errors and wraps some API calls.
 
 ## How to Install
 
@@ -26,7 +29,7 @@ Replace the two values shown here.
 	API_SECRET = 'this-is-my-secret'
 ````
 
-The keys you need can be created on
+The keys you need can be created at
 [Coinkite.com under Merchant / API]([https://coinkite.com/merchant/api).
 
 
@@ -39,7 +42,7 @@ safely holding all your cryptocurrencies, including Bitcoin and Litecoin.
 
 ## Liscense
 
-Copyright (C) 2013 Coinkite Inc. (https://coinkite.com)
+Copyright (C) 2014 Coinkite Inc. (https://coinkite.com)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
