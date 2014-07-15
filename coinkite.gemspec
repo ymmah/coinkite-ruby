@@ -9,7 +9,7 @@ spec = Gem::Specification.new do |s|
   s.description = 'Coinkite is the most secure way to transact in bitcoin online. See https://coinkite.com for details.'
   s.authors = ['Ilia Lobsanov']
   s.email = ['ilia@lobsanov.com']
-  s.homepage = 'https://docs.coinkite.com/api/index.html'
+  s.homepage = 'https://docs.coinkite.com/'
   s.license = 'MIT'
 
   s.add_dependency('rest-client', '~> 1.4')
