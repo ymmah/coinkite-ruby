@@ -11,12 +11,7 @@ def sign(endpoint, force_ts=nil)
     require 'time'
     require 'openssl'
 
-    if force_ts then
-        ts = force_ts 
-    else
-        ts = Time.now.utc.iso8601
-    end
-
+    ts = force_ts || Time.now.utc.iso8601
     data = endpoint + '|' + ts
     hmac = OpenSSL::HMAC.hexdigest(OpenSSL::Digest::Digest.new('SHA256'), API_SECRET, data)
 
