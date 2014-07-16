@@ -1,0 +1,26 @@
+{
+  "paging": {
+    "count_here": 2,
+    "limit": 25,
+    "offset": 0,
+    "total_count": 2
+  },
+  "results": [
+    {
+      "CK_refnum": "F033F8C7CA-B2B217",
+      "CK_type": "CKAccount",
+      "coin_type": "BTC",
+      "is_closed": false,
+      "name": "My Bitcoins",
+      "subaccount": 0
+    },
+    {
+      "CK_refnum": "4469EFE54E-DE212F",
+      "CK_type": "CKAccount",
+      "coin_type": "LTC",
+      "is_closed": false,
+      "name": "My Litecoins",
+      "subaccount": 1
+    }
+  ]
+}

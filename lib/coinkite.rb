@@ -44,12 +44,12 @@ module Coinkite
 
       request_opts = {}
       request_opts.update(:verify_ssl => OpenSSL::SSL::VERIFY_PEER,
-                          :ssl_ca_file => @ssl_bundle_path,
-                          :headers => request_headers(endpoint).update(headers),
-                          :method => method, :open_timeout => 30,
-                          :payload => payload, :url => url, :timeout => 80)
+                        :ssl_ca_file => @ssl_bundle_path,
+                        :method => method, :open_timeout => 30,
+                        :payload => payload, :url => url, :timeout => 80)
 
       begin
+        request_opts.update(:headers => request_headers(endpoint).update(headers))
         response = RestClient::Request.execute(request_opts)
       rescue SocketError => e
         handle_restclient_error(e)
@@ -63,8 +63,9 @@ module Coinkite
         end
       rescue RestClient::ExceptionWithResponse => e
         if rcode = e.http_code and rbody = e.http_body
+          rbody = JSON.parse(rbody)
           if rcode == 429 and rbody.has_key?("wait_time")
-            sleep(rbody.wait_time)
+            sleep(rbody["wait_time"])
             retry
           else
             handle_api_error(rcode, rbody)
@@ -76,6 +77,7 @@ module Coinkite
         handle_restclient_error(e)
       end
 
+      #puts response.body
       JSON.parse(response.body)
     end
 
@@ -129,7 +131,7 @@ module Coinkite
     def make_signature(endpoint, force_ts=nil)
       ts = force_ts || Time.now.utc.iso8601
       data = endpoint + '|' + ts
-      hmac = OpenSSL::HMAC.hexdigest(OpenSSL::Digest::Digest.new('SHA256'), @api_secret, data)
+      hmac = OpenSSL::HMAC.hexdigest(OpenSSL::Digest.new('SHA256'), @api_secret, data)
 
       return hmac, ts
     end
@@ -145,8 +147,8 @@ module Coinkite
       }
     end
 
-    def get(endpoint)
-      request('GET', endpoint)
+    def get(endpoint, *args)
+      request('GET', endpoint, *args)
     end
 
     def get_accounts
@@ -159,6 +161,41 @@ module Coinkite
 
     def get_balance(account)
       get("/v1/account/#{account}")["account"]
+    end
+
+    def get_iter(endpoint, offset: 0, limit: nil, batch_size: 25, safety_limit: 500, **options)
+      Enumerator.new do |yielder|
+        loop do
+          if limit and limit < batch_size
+            batch_size = limit
+          end
+
+          response = get(endpoint, { offset: offset, limit: batch_size })
+
+          here = response["paging"]["count_here"]
+          total = response["paging"]["total_count"]
+
+          if total > safety_limit
+            raise StandardError.new("Too many results (#{total}); consider another approach")
+          end
+
+          raise StopIteration if not here
+
+          response["results"].each { |entry| yielder.yield entry }
+
+          offset += here
+          if limit != nil
+            limit -= here
+            raise StopIteration if limit <= 0
+          end
+        end
+      end
+    end
+
+    def get_list(what)
+      # this returns a generator function
+      endpoint = "/v1/list/#{what}"
+      get_iter(endpoint)
     end
   end
 end
