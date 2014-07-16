@@ -17,8 +17,14 @@ Header lines you need:
 	X-CK-Timestamp: 2014-06-23T03:10:04.905376
 	X-CK-Sign: 0aa7755aaa45189a98a5a8a887a564aa55aa5aa4aa7a98aa2858aaa60a5a56aa
 
-Use the Gem for a more complete solution that also checks SSL certificates, 
-handles some errors and wraps some API calls.
+### Ruby Gems
+
+[![Gem Version](https://badge.fury.io/rb/coinkite.svg)](http://badge.fury.io/rb/coinkite)
+
+Use the [Coinkite Gem](http://rubygems.org/gems/coinkite) for a more complete solution that also checks SSL certificates, handles some errors and wraps some API calls. 
+
+_Quick install_ `gem install coinkite`
+
 
 ## How to Install
 
