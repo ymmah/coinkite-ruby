@@ -17,6 +17,7 @@ spec = Gem::Specification.new do |s|
   s.add_dependency('json', '~> 1.8')
 
   s.add_development_dependency('rspec', '~>3.0')
+  s.add_development_dependency('webmock')
 
   s.files = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- spec/*`.split("\n")

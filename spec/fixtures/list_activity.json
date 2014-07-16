@@ -1,0 +1,221 @@
+{
+  "filters": {},
+  "paging": {
+    "count_here": 25,
+    "limit": 25,
+    "offset": 0,
+    "total_count": 50
+  },
+  "results": [
+    {
+      "CK_refnum": "8DF23CD7E5-3934A1",
+      "CK_type": "CKActivityLog",
+      "created_at": "2014-07-16T00:54:42.771753Z",
+      "detail_url": "https://coinkite.com/detail-view/204AFD04E2-582536",
+      "ip_address": "70.28.22.73",
+      "is_failed_login": true,
+      "summary": "API Security: Timestamp (2014-07-16T00:54:23Z) is same as last request (2014-07-16T00:54:23)"
+    },
+    {
+      "CK_refnum": "635CBAE25F-34E37A",
+      "CK_type": "CKActivityLog",
+      "created_at": "2014-07-15T07:12:52.963799Z",
+      "summary": "Session logout due to: idle"
+    },
+    {
+      "CK_refnum": "6EEE9E70EB-2182C2",
+      "CK_type": "CKActivityLog",
+      "created_at": "2014-07-15T06:42:24.693065Z",
+      "ip_address": "173.230.162.137",
+      "is_good_login": true,
+      "summary": "Successful login"
+    },
+    {
+      "CK_refnum": "379DC805EB-D6500C",
+      "CK_type": "CKActivityLog",
+      "created_at": "2014-07-15T06:41:38.094765Z",
+      "ip_address": "173.230.162.137",
+      "is_failed_login": true,
+      "summary": "Wrong password provided"
+    },
+    {
+      "CK_refnum": "C087D345E9-169E52",
+      "CK_type": "CKActivityLog",
+      "created_at": "2014-07-15T06:41:28.450025Z",
+      "ip_address": "173.230.162.137",
+      "is_failed_login": true,
+      "summary": "Wrong password provided"
+    },
+    {
+      "CK_refnum": "FC7B5563A5-46A711",
+      "CK_type": "CKActivityLog",
+      "created_at": "2014-07-15T02:47:00.456048Z",
+      "summary": "Session logout due to: idle"
+    },
+    {
+      "CK_refnum": "38409A3FD4-A77931",
+      "CK_type": "CKActivityLog",
+      "created_at": "2014-07-15T02:15:34.210910Z",
+      "email_msg": {
+        "CK_refnum": "3B4176F6BA-E366DC",
+        "CK_type": "CKEmailMessage",
+        "template": "event_notify",
+        "to": "foo@bar.com"
+      },
+      "summary": "Sent email: \"Coinkite notification: API Key added/changed\" to foo@bar.com"
+    },
+    {
+      "CK_refnum": "43C3F7C40B-B34430",
+      "CK_type": "CKActivityLog",
+      "created_at": "2014-07-15T02:15:34.011270Z",
+      "detail_url": "https://coinkite.com/detail-view/204AFD04E2-582536",
+      "ip_address": "173.230.162.137",
+      "summary": "Edited API Key (xxx-xxx-xxxx): perms [read] \u2192 [term, read, send2, xfer, recv, events, send]"
+    },
+    {
+      "CK_refnum": "13CCF205B4-457B5A",
+      "CK_type": "CKActivityLog",
+      "created_at": "2014-07-15T02:15:05.307082Z",
+      "email_msg": {
+        "CK_refnum": "4981672827-8B8376",
+        "CK_type": "CKEmailMessage",
+        "template": "event_notify",
+        "to": "foo@bar.com"
+      },
+      "summary": "Sent email: \"Coinkite notification: API Key added/changed\" to foo@bar.com"
+    },
+    {
+      "CK_refnum": "509D38A9F4-927A96",
+      "CK_type": "CKActivityLog",
+      "created_at": "2014-07-15T02:15:05.152984Z",
+      "detail_url": "https://coinkite.com/detail-view/204AFD04E2-582536",
+      "ip_address": "173.230.162.137",
+      "summary": "New API key created: xxx-xxx-xxxx"
+    },
+    {
+      "CK_refnum": "39EDD669B7-D707DB",
+      "CK_type": "CKActivityLog",
+      "created_at": "2014-07-15T02:07:19.250733Z",
+      "ip_address": "173.230.162.137",
+      "is_good_login": true,
+      "summary": "Successful login"
+    },
+    {
+      "CK_refnum": "8BE9182341-5B345F",
+      "CK_type": "CKActivityLog",
+      "created_at": "2014-07-15T02:06:50.360758Z",
+      "ip_address": "173.230.162.137",
+      "is_failed_login": true,
+      "summary": "Password right, but no token given"
+    },
+    {
+      "CK_refnum": "E060DF5539-6B10E1",
+      "CK_type": "CKActivityLog",
+      "created_at": "2014-07-15T02:06:39.615590Z",
+      "ip_address": "173.230.162.137",
+      "is_failed_login": true,
+      "summary": "Password right, but no token given"
+    },
+    {
+      "CK_refnum": "F79ABE27E1-E9E836",
+      "CK_type": "CKActivityLog",
+      "created_at": "2014-07-15T01:56:46.168697Z",
+      "ip_address": "173.230.162.137",
+      "is_failed_login": true,
+      "summary": "Password right, but wrong token given"
+    },
+    {
+      "CK_refnum": "4A815CA99A-656010",
+      "CK_type": "CKActivityLog",
+      "created_at": "2014-07-03T19:44:06.590482Z",
+      "summary": "Session logout due to: idle"
+    },
+    {
+      "CK_refnum": "BF3FFEBF97-02309D",
+      "CK_type": "CKActivityLog",
+      "created_at": "2014-07-03T19:09:20.358185Z",
+      "ip_address": "174.114.27.33",
+      "is_good_login": true,
+      "summary": "Successful login"
+    },
+    {
+      "CK_refnum": "E151FBF523-DB6774",
+      "CK_type": "CKActivityLog",
+      "created_at": "2014-07-03T18:27:11.538728Z",
+      "summary": "Session logout due to: idle"
+    },
+    {
+      "CK_refnum": "3882BAAA86-1F09C9",
+      "CK_type": "CKActivityLog",
+      "created_at": "2014-07-03T17:51:54.778717Z",
+      "ip_address": "174.114.27.33",
+      "is_good_login": true,
+      "summary": "Successful login"
+    },
+    {
+      "CK_refnum": "D011210218-184323",
+      "CK_type": "CKActivityLog",
+      "created_at": "2014-07-03T17:51:29.361788Z",
+      "ip_address": "174.114.27.33",
+      "is_failed_login": true,
+      "summary": "Password right, but no token given"
+    },
+    {
+      "CK_refnum": "890F381357-FEC713",
+      "CK_type": "CKActivityLog",
+      "created_at": "2014-06-23T13:50:43.190186Z",
+      "email_msg": {
+        "CK_refnum": "501D894646-4F0D49",
+        "CK_type": "CKEmailMessage",
+        "template": "outstanding",
+        "to": "foo@bar.com"
+      },
+      "summary": "Sent email: \"Reminder: Empty Account\" to foo@bar.com"
+    },
+    {
+      "CK_refnum": "6A2A3AB45B-8E4B39",
+      "CK_type": "CKActivityLog",
+      "created_at": "2014-05-14T13:50:29.757841Z",
+      "email_msg": {
+        "CK_refnum": "656C56B946-81069E",
+        "CK_type": "CKEmailMessage",
+        "template": "outstanding",
+        "to": "foo@bar.com"
+      },
+      "summary": "Sent email: \"Reminder: Empty Account\" to foo@bar.com"
+    },
+    {
+      "CK_refnum": "EA1FED5560-337C96",
+      "CK_type": "CKActivityLog",
+      "created_at": "2014-04-10T21:59:36.462092Z",
+      "summary": "Session logout due to: idle"
+    },
+    {
+      "CK_refnum": "644EAB22CC-8CF221",
+      "CK_type": "CKActivityLog",
+      "created_at": "2014-04-10T21:27:24.028223Z",
+      "ip_address": "199.33.114.66",
+      "summary": "Updated your country to CA: Canada"
+    },
+    {
+      "CK_refnum": "3FD13A7BAB-F9E413",
+      "CK_type": "CKActivityLog",
+      "created_at": "2014-04-10T21:27:24.005037Z",
+      "ip_address": "199.33.114.66",
+      "is_good_login": true,
+      "summary": "Successful login"
+    },
+    {
+      "CK_refnum": "E4D82430DE-3F4A49",
+      "CK_type": "CKActivityLog",
+      "created_at": "2014-04-09T13:51:02.205891Z",
+      "email_msg": {
+        "CK_refnum": "DBF7AE83BA-AE2865",
+        "CK_type": "CKEmailMessage",
+        "template": "outstanding",
+        "to": "foo@bar.com"
+      },
+      "summary": "Sent email: \"Empty Account\" to foo@bar.com"
+    }
+  ]
+}
