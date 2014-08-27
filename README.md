@@ -1,4 +1,4 @@
-# Coinkite API Code for Ruby
+# Coinkite Bitcoin API Code for Ruby
 
 [Learn more about Coinkite's API here](https://docs.coinkite.com/)
 and visit the [Coinkite Main Site](https://coinkite.com/) to open your
