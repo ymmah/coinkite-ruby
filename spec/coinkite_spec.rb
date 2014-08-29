@@ -5,6 +5,29 @@ describe Coinkite do
     @coinkite = Coinkite::Client.new(ENV['CK_API_KEY'], ENV['CK_API_SECRET'])
   end
 
+  describe "#_signable_endpoint" do
+    let(:endpoint_with_query_string) { "https://api.coinkite.com/v1/my/accounts?foo=bar" }
+    let(:endpoint_without_query_string) { "https://api.coinkite.com/v1/my/accounts" }
+
+    it "should return endpoint without query string if given one" do
+      expect(@coinkite.send(:_signable_endpoint, endpoint_with_query_string)).to eq(endpoint_without_query_string)
+    end
+
+    it "should return endpoint without query string if given none" do
+      expect(@coinkite.send(:_signable_endpoint, endpoint_without_query_string)).to eq(endpoint_without_query_string)
+    end
+  end
+
+  describe "#get" do
+    context "with query string in endpoint" do
+      it "should be retrievable" do
+        WebMock.allow_net_connect!
+        spot_quote = @coinkite.get('/v1/spot_quote?to_cct=ZAR')
+        expect(spot_quote).to have_key("result")
+      end
+    end
+  end
+
   describe "#get_accounts" do
     it "should be retrievable" do
       stub_request(:get, "https://api.coinkite.com/v1/my/accounts").to_return(body: fixture("accounts.json"))
@@ -24,7 +47,7 @@ describe Coinkite do
       @activities.next
     end
 
-     it "should return an Enumerator" do
+    it "should return an Enumerator" do
       expect(@activities).to be_kind_of(Enumerator)
     end
 

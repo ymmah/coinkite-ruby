@@ -26,7 +26,7 @@ module Coinkite
 
     def request(method, endpoint, params={}, headers={})
       unless api_key ||= @api_key
-        raise AuthenticationError.new('No API key provided. ' +
+        raise CoinkiteError.new('No API key provided. ' +
           'Set your API key using "Coinkite.api_key = <API-KEY>". ' +
           'You can generate API keys from the Coinkite web interface. ')
       end
@@ -137,7 +137,7 @@ module Coinkite
     end
 
     def request_headers(endpoint, force_ts=nil)
-      signature, timestamp = make_signature(endpoint, force_ts)
+      signature, timestamp = make_signature(_signable_endpoint(endpoint), force_ts)
 
       {
         'X-CK-Key' => @api_key,
@@ -196,6 +196,12 @@ module Coinkite
       # this returns a generator function
       endpoint = "/v1/list/#{what}"
       get_iter(endpoint)
+    end
+
+    private
+    def _signable_endpoint(endpoint)
+      # return endpoint without query string
+      endpoint.split("?").first
     end
   end
 end
