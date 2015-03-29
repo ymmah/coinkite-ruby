@@ -38,7 +38,7 @@ module Coinkite
         url += "#{URI.parse(url).query ? '&' : '?'}#{uri_encode(params)}" if params && params.any?
         payload = nil
       else
-        payload = JSON.encode(params.fetch('_data', params))
+        payload = ActiveSupport::JSON.encode(params.fetch('_data', params))
         headers['Content-Type'] = 'application/json'
       end
 
